@@ -112,6 +112,11 @@
     }
     .btn:hover{ transform: translateY(-1px); }
     .btn:active{ transform: translateY(0px); }
+    .btn:disabled{
+      opacity: .6;
+      cursor: not-allowed;
+      transform: none;
+    }
     .btn.secondary{
       background: rgba(255,255,255,.08);
       color: var(--text);
@@ -478,7 +483,7 @@
           <h1>Mississippi River Marketing<br/>for Local Businesses</h1>
           <p class="subhead">
             I help local businesses fix and optimize their Google Business Profile so customers can find you,
-            click “Call,” and book.
+            click "Call," and book.
           </p>
 
           <div class="bullets">
@@ -500,7 +505,7 @@
               <div class="dot"></div>
               <div>
                 <strong>Missed Call & Contact Fixes</strong>
-                <span>Broken call buttons, wrong numbers, missing CTAs—fixed.</span>
+                <span>Broken call buttons, wrong numbers, missing CTAs - fixed.</span>
               </div>
             </div>
             <div class="bullet">
@@ -535,7 +540,7 @@
           <div class="side-box">
             <h3>Fast Start</h3>
             <p>
-              You don’t need a complicated website to start getting leads.
+              You don't need a complicated website to start getting leads.
               You need a profile Google trusts and customers understand.
             </p>
           </div>
@@ -626,22 +631,17 @@
       <div class="section-head">
         <div>
           <h2>Map</h2>
-          <p>Serving Cape Girardeau and Southeast Missouri. Want a different zoom/area? Adjust the city in the map URL.</p>
+          <p>Serving Cape Girardeau and Southeast Missouri.</p>
         </div>
       </div>
 
       <div class="map">
-        <!-- You can change the query to your exact service area -->
         <iframe
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
           src="https://www.google.com/maps?q=Cape%20Girardeau%2C%20MO&output=embed">
         </iframe>
       </div>
-
-      <p style="margin: 12px 0 0; color: var(--muted); font-size: 13px;">
-        Want to add real reviews? Send me 2–6 lines of text from clients (or screenshots) and I’ll format them cleanly.
-      </p>
     </div>
   </section>
 
@@ -651,7 +651,7 @@
       <div class="section-head">
         <div>
           <h2>Free Audit (No Obligation)</h2>
-          <p>I’ll review your Google Business Profile and tell you exactly what’s missing, broken, or holding you back.</p>
+          <p>I'll review your Google Business Profile and tell you exactly what's missing, broken, or holding you back.</p>
         </div>
       </div>
 
@@ -669,23 +669,33 @@
     </div>
   </section>
 
-  <!-- REQUEST AUDIT FORM -->
+  <!-- REQUEST AUDIT FORM (WORKING POST FORM) -->
   <section id="request">
     <div class="container">
       <div class="section-head">
         <div>
           <h2>Request the Audit</h2>
-          <p>Fill this out and I’ll follow up with what’s broken, what’s missing, and what to fix first.</p>
+          <p>Fill this out and I'll follow up with what's broken, what's missing, and what to fix first.</p>
         </div>
       </div>
 
       <div class="card audit-card">
-        <form id="mrm-audit-form" autocomplete="on" novalidate>
+        <!-- NOTE: This uses a normal form POST to avoid CORS issues -->
+        <form id="mrm-audit-form"
+              action="https://script.google.com/macros/s/AKfycbyOlXNrFIAn0lJ5OpGOlTVL3xzlPXa1kybZSJaTT0j3qzqX72MywasSYbWlk00ZgWvk/exec"
+              method="POST"
+              target="mrm_hidden_iframe"
+              autocomplete="on"
+              novalidate>
+
           <!-- Honeypot (spam trap). Keep hidden. -->
           <div class="hp-field" aria-hidden="true">
             <label>Leave this field blank</label>
             <input type="text" name="company_website" tabindex="-1" autocomplete="off">
           </div>
+
+          <!-- Source tag -->
+          <input type="hidden" name="source" value="MRM Website - Free Audit">
 
           <div class="audit-grid">
             <div class="field">
@@ -714,26 +724,27 @@
           <div class="field">
             <label for="gbp">Google Business Profile Link (optional)</label>
             <input id="gbp" name="gbp" type="url" placeholder="https://maps.app.goo.gl/...">
-            <small>If you don’t have it, submit anyway — I can still run checks.</small>
+            <small>If you don't have it, submit anyway - I can still run checks.</small>
           </div>
 
           <div class="field">
             <label for="needs">What do you want fixed?</label>
-            <textarea id="needs" name="needs" rows="5" placeholder="Example: Not showing in Maps, wrong phone button, competitors outrank me, need categories/services fixed..." required></textarea>
+            <textarea id="needs" name="needs" rows="5" placeholder="Example: Not showing in Maps, wrong phone button, competitors outrank me..." required></textarea>
           </div>
 
           <label class="consent">
-            <input type="checkbox" name="consent" checked>
+            <input type="checkbox" name="consent" value="yes" checked>
             OK to email me the audit + occasional tips (unsubscribe anytime).
           </label>
 
-          <button type="submit" class="btn" id="audit-submit">
-            Send Audit Request
-          </button>
-
+          <button type="submit" class="btn" id="audit-submit">Send Audit Request</button>
           <p id="mrm-form-status" class="status" role="status" aria-live="polite"></p>
-          <p class="fineprint">This sends an email to: <strong>MississippiRiverMarketing@gmail.com</strong></p>
+
+          <p class="fineprint">After submission, your entries are cleared automatically.</p>
         </form>
+
+        <!-- Hidden iframe prevents redirect away from your page -->
+        <iframe name="mrm_hidden_iframe" id="mrm_hidden_iframe" style="display:none;"></iframe>
       </div>
     </div>
   </section>
@@ -772,53 +783,31 @@
   </footer>
 
   <script>
-    // Your deployed Apps Script web app endpoint:
-    const MRM_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyOlXNrFIAn0lJ5OpGOlTVL3xzlPXa1kybZSJaTT0j3qzqX72MywasSYbWlk00ZgWvk/exec";
+    // Prevent duplicate submissions + clear fields after submit.
+    (function () {
+      var form = document.getElementById("mrm-audit-form");
+      var statusEl = document.getElementById("mrm-form-status");
+      var btn = document.getElementById("audit-submit");
 
-    const form = document.getElementById("mrm-audit-form");
-    const statusEl = document.getElementById("mrm-form-status");
-    const submitBtn = document.getElementById("audit-submit");
+      if (!form) return;
 
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
+      form.addEventListener("submit", function () {
+        // Honeypot: if bots fill it, silently ignore (no status update)
+        if (form.company_website && form.company_website.value.trim() !== "") return;
 
-      // Honeypot check (spam bots fill it)
-      if (form.company_website && form.company_website.value.trim() !== "") return;
+        // Prevent duplicate clicks/submits
+        btn.disabled = true;
+        statusEl.textContent = "Sending...";
 
-      statusEl.textContent = "Sending...";
-      submitBtn.disabled = true;
-
-      const payload = {
-        name: form.name.value.trim(),
-        business: form.business.value.trim(),
-        phone: form.phone.value.trim(),
-        email: form.email.value.trim(),
-        gbp: form.gbp.value.trim(),
-        needs: form.needs.value.trim(),
-        consent: !!form.consent.checked,
-        source: "MRM Website - Free Audit"
-      };
-
-      try {
-        const res = await fetch(MRM_WEB_APP_URL, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload)
-        });
-
-        // If your script returns JSON, try to read it.
-        // Even if it doesn't, the request can still succeed.
-        try { await res.json(); } catch (_) {}
-
-        statusEl.textContent = "✅ Request sent. Check your email shortly.";
-        form.reset();
-      } catch (err) {
-        console.error(err);
-        statusEl.textContent = "❌ Something went wrong. Please try again, or call (573) 621-4337.";
-      } finally {
-        submitBtn.disabled = false;
-      }
-    });
+        // Clear the form so there are no duplicate listings
+        // (We do it shortly after submit so the POST payload is not interrupted.)
+        setTimeout(function () {
+          try { form.reset(); } catch (e) {}
+          statusEl.textContent = "✅ Sent. Check your email shortly.";
+          btn.disabled = false;
+        }, 1200);
+      });
+    })();
   </script>
 </body>
 </html>
