@@ -3,23 +3,27 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Local SEO in Cape Girardeau, MO | Mississippi River Marketing</title>
-  <meta name="description" content="Mississippi River Marketing helps Cape Girardeau-area businesses get found on Google, Apple Maps, Siri, and Bing. Local SEO, listings, and conversion-first websites." />
+  <meta name="description" content="Mississippi River Marketing helps Cape Girardeau-area businesses get found on Google, Apple Maps/Siri, and Bing—then turns that visibility into calls and booked jobs." />
   <meta name="theme-color" content="#0b0b0f" />
 
-<link rel="stylesheet" href="styles.css">
-  
   <!-- Open Graph -->
   <meta property="og:title" content="Mississippi River Marketing | Local SEO in Cape Girardeau, MO" />
-  <meta property="og:description" content="Local SEO + Maps visibility systems that turn searches into calls, directions, and booked jobs." />
+  <meta property="og:description" content="Local SEO + listings + conversion-first website systems that turn searches into customers." />
   <meta property="og:image" content="assets/bridge.jpg" />
   <meta property="og:type" content="website" />
 
-  <!-- GSAP for real scroll animations -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- GSAP (scroll animations) -->
   <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 
-  <!-- LocalBusiness schema (edit phone/address when ready) -->
+  <!-- Site JS -->
+  <script defer src="scripts.js"></script>
+
+  <!-- LocalBusiness schema (safe baseline; add phone/address when you want) -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -33,55 +37,57 @@
 </head>
 
 <body>
-  <header>
+  <header class="siteHeader">
     <div class="container nav">
-      <a class="brand" href="#top" aria-label="Mississippi River Marketing">
-        <img src="assets/mrm-logo.png" alt="Mississippi River Marketing logo" />
+      <a class="brand" href="#top" aria-label="Home">
+        <img src="assets/logo.png" alt="Mississippi River Marketing logo" />
         <span>Mississippi River Marketing</span>
       </a>
 
       <nav class="links" aria-label="Primary navigation">
         <a href="#services">Services</a>
-        <a href="#cape">Cape Girardeau</a>
-        <a href="#resources">Resources</a>
-        <a href="#tools">Official Tools</a>
-        <a href="#contact">Contact</a>
+        <a href="#why">Why it works</a>
+        <a href="#resources">Official links</a>
+        <a href="#contact" class="navCta">Free check</a>
       </nav>
 
-      <div style="display:flex; gap:10px; align-items:center;">
-        <a class="btn ghost" href="#contact">Free Visibility Check</a>
-        <a class="btn primary mobileOnly" href="#contact">Contact</a>
-      </div>
+      <a class="btn primary mobileCta" href="#contact">Free visibility check</a>
     </div>
   </header>
 
   <main id="top">
+    <!-- HERO -->
     <section class="hero">
       <div class="container heroGrid">
         <div class="card heroLeft">
           <div class="kicker reveal">Local SEO • Maps • Voice Search</div>
-          <h1 class="reveal">Local SEO in Cape Girardeau, MO — Mississippi River Marketing</h1>
+
+          <h1 class="reveal">
+            Local SEO in Cape Girardeau, MO — built to drive calls, not “likes”.
+          </h1>
+
           <p class="sub reveal">
-            Helping Cape Girardeau-area businesses show up on Google Search & Maps, Apple Maps/Siri, and Bing —
-            then convert that visibility into calls, direction requests, and booked jobs.
+            If customers can’t find you on Google Maps or Apple Maps, they’re calling someone else.
+            We clean up listings, strengthen local trust signals, and add a conversion layer that turns searches into booked work.
           </p>
+
           <div class="heroActions reveal">
-            <a class="btn primary" href="#contact">Request a Free Visibility Check</a>
-            <a class="btn" href="#services">See Services</a>
+            <a class="btn primary" href="#contact">Request a free visibility check</a>
+            <a class="btn ghost" href="#services">See what’s included</a>
           </div>
 
-          <div class="statsRow">
-            <div class="stat reveal">
-              <b><span class="count" data-to="7">0</span>-Day Sprint</b>
-              <span>Fix accuracy + quick wins fast</span>
+          <div class="statsRow reveal">
+            <div class="stat">
+              <b>Fast setup</b>
+              <span>Clear next steps and quick wins in the first week.</span>
             </div>
-            <div class="stat reveal">
-              <b><span class="count" data-to="30">0</span>% More Views</b>
-              <span>Claimed listings get more views (per Apple)</span>
+            <div class="stat">
+              <b>Maps-first</b>
+              <span>Optimized for Google + Apple discovery behavior.</span>
             </div>
-            <div class="stat reveal">
-              <b><span class="count" data-to="31">0</span>% CTR Lift</b>
-              <span>Action links increase clicks (per Apple)</span>
+            <div class="stat">
+              <b>Conversion focused</b>
+              <span>Calls, directions, forms—built into the site.</span>
             </div>
           </div>
         </div>
@@ -89,65 +95,71 @@
         <aside class="card heroRight">
           <div class="mini reveal">
             <h3>What you get first</h3>
-            <p>A visibility audit: NAP accuracy, duplicates, categories, map presence, conversion leaks, and next steps.</p>
+            <p>A visibility breakdown: listing accuracy, duplicate risks, category fit, and the biggest conversion leaks.</p>
           </div>
+
           <div class="mini reveal">
-            <h3>Who we help</h3>
-            <p>Contractors, home services, auto services, retail, and local shops that need consistent discovery.</p>
+            <h3>Best fit businesses</h3>
+            <p>Local services, shops, contractors, auto services, and any business that depends on calls and walk-ins.</p>
           </div>
+
           <div class="mini reveal">
-            <h3>Local roots</h3>
-            <p>Cape Girardeau / SEMO — built for sustainable local growth.</p>
+            <h3>Local identity</h3>
+            <p>Cape Girardeau / SEMO brand presence—designed to look established and trustworthy.</p>
           </div>
         </aside>
       </div>
+
+      <div class="heroFade"></div>
     </section>
 
+    <!-- SERVICES -->
     <section id="services">
       <div class="container">
-        <h2 class="sectionTitle reveal">What we do (and why it converts)</h2>
+        <h2 class="sectionTitle reveal">Services that actually move local rankings</h2>
         <p class="lead reveal">
-          Most local businesses lose to competitors that are simply easier to find and trust. We build the visibility foundation
-          and the conversion layer that turns searchers into customers.
+          Local visibility is usually lost to basic issues: wrong categories, inconsistent info, weak trust signals, or no conversion path.
+          We fix the foundation and make it easy for customers to take action.
         </p>
 
         <div class="grid3">
           <div class="tile reveal">
             <b>Google Business Profile</b>
-            <span>Categories, services, photos, posts, Q&A, reviews, and ranking-signal hygiene.</span>
+            <span>Categories, services, photos, posts, Q&A, review strategy, and cleanup.</span>
           </div>
           <div class="tile reveal">
             <b>Apple Maps / Siri</b>
-            <span>Apple Business Connect setup + place card optimization for Apple discovery.</span>
+            <span>Apple Business Connect setup + place card optimization.</span>
           </div>
           <div class="tile reveal">
-            <b>Bing / Voice Search</b>
-            <span>Bing for Business setup + consistency that voice assistants pull from.</span>
+            <b>Bing local visibility</b>
+            <span>Bing listing setup + consistency that voice tools reference.</span>
           </div>
           <div class="tile reveal">
-            <b>Citations & Directory Authority</b>
-            <span>NAP consistency, duplicate suppression, and trust signals that strengthen map visibility.</span>
+            <b>NAP consistency</b>
+            <span>Name, address, phone alignment across key directories.</span>
           </div>
           <div class="tile reveal">
-            <b>Conversion-First Website</b>
-            <span>Fast, mobile-first pages that drive calls, form submissions, and direction requests.</span>
+            <b>Conversion-first website</b>
+            <span>Fast, mobile-first pages with clear CTAs and friction-free forms.</span>
           </div>
           <div class="tile reveal">
-            <b>Reputation & Review System</b>
-            <span>Ethical review strategy + response frameworks that build trust and click-through.</span>
+            <b>Reputation support</b>
+            <span>Review request flows + response templates that build trust.</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="pinnedWrap" aria-label="Scroll story">
+    <!-- WHY IT WORKS (PINNED SCROLL SECTIONS) -->
+    <section id="why" class="pinnedWrap" aria-label="Why it works">
       <div class="pinned" id="pinOne">
         <div class="container pinnedInner">
           <div class="pinnedCard">
-            <div class="kicker">The Local Search Reality</div>
-            <p class="big">Customers search maps first — not websites first.</p>
+            <div class="kicker">What customers do</div>
+            <p class="big">They search Maps first.</p>
             <p class="lead" style="margin:0;">
-              If your listing is incomplete, inconsistent, or untrusted, you’re invisible in the exact moment buyers are ready.
+              If your listing looks incomplete or inconsistent, you don’t get the click—especially on mobile.
             </p>
           </div>
         </div>
@@ -156,10 +168,10 @@
       <div class="pinned" id="pinTwo">
         <div class="container pinnedInner">
           <div class="pinnedCard">
-            <div class="kicker">The Fix</div>
-            <p class="big">Tighten listings + authority signals, then build the conversion layer.</p>
+            <div class="kicker">What we fix</div>
+            <p class="big">Accuracy + trust signals + relevance.</p>
             <p class="lead" style="margin:0;">
-              More calls. More direction requests. Better lead quality — because you show up and look credible.
+              Categories, services, photos, NAP consistency, and the details that help listings win map pack clicks.
             </p>
           </div>
         </div>
@@ -168,70 +180,47 @@
       <div class="pinned" id="pinThree">
         <div class="container pinnedInner">
           <div class="pinnedCard">
-            <div class="kicker">The Advantage</div>
-            <p class="big">In Cape Girardeau, small execution gaps create huge ranking gaps.</p>
+            <div class="kicker">What converts</div>
+            <p class="big">A clear next step.</p>
             <p class="lead" style="margin:0;">
-              When competitors skip the fundamentals, you win by doing them better.
+              When customers land on your site, they should immediately know how to call, request a quote, or get directions.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="cape">
-      <div class="container">
-        <h2 class="sectionTitle reveal">Cape Girardeau local SEO: what actually moves the needle</h2>
-        <p class="lead reveal">
-          Local ranking is stacked fundamentals: accuracy, relevance, and trust — consistently across platforms. Here’s what we check and improve first.
-        </p>
-
-        <div class="grid3">
-          <div class="tile reveal">
-            <b>Category precision</b>
-            <span>Primary + secondary category selection that matches real search intent.</span>
-          </div>
-          <div class="tile reveal">
-            <b>NAP consistency</b>
-            <span>Name, address, phone consistency across major directories and data sources.</span>
-          </div>
-          <div class="tile reveal">
-            <b>Conversion points</b>
-            <span>Calls, appointment links, quote forms, and direction requests aren’t optional.</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
+    <!-- OFFICIAL LINKS + SOCIAL -->
     <section id="resources">
       <div class="container">
-        <h2 class="sectionTitle reveal">Resources & official setup links</h2>
+        <h2 class="sectionTitle reveal">Official portals (the same links we use)</h2>
         <p class="lead reveal">
-          Want to claim or verify your listings yourself? These are the official portals we work from.
+          If you want to verify legitimacy or start a claim yourself, these are the official platforms.
         </p>
 
         <div class="resources">
           <div class="resource reveal">
-            <b>Create / manage a Google Business Profile</b>
-            <span>Official Google Business Profile start page.</span><br/>
+            <b>Google Business Profile</b>
+            <span>Create or manage your listing.</span><br/>
             <a href="https://www.about.google/business/" target="_blank" rel="noopener">Open Google Business Profile →</a>
           </div>
 
           <div class="resource reveal">
-            <b>Apple Business Connect (Apple Maps / Siri)</b>
-            <span>Official Apple portal to claim and manage place cards.</span><br/>
+            <b>Apple Business Connect</b>
+            <span>Manage Apple Maps + Siri place cards.</span><br/>
             <a href="https://businessconnect.apple.com/" target="_blank" rel="noopener">Open Apple Business Connect →</a>
           </div>
 
           <div class="resource reveal">
-            <b>Bing for Business (Bing Places)</b>
-            <span>Microsoft’s Bing business listing portal.</span><br/>
+            <b>Bing for Business</b>
+            <span>Manage your Bing listing.</span><br/>
             <a href="https://www.bing.com/forbusiness" target="_blank" rel="noopener">Open Bing for Business →</a>
           </div>
 
           <div class="resource reveal">
-            <b>Follow on social</b>
-            <span>Connect with the company on Facebook and LinkedIn.</span><br/>
-            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;">
+            <b>Follow us</b>
+            <span>Social proof + updates.</span><br/>
+            <div class="socialRow">
               <a class="btn" href="https://www.facebook.com/profile.php?id=61586141431675" target="_blank" rel="noopener">Facebook</a>
               <a class="btn" href="https://linkedin.com/company/mississippi-river-marketing" target="_blank" rel="noopener">LinkedIn</a>
             </div>
@@ -240,47 +229,13 @@
       </div>
     </section>
 
-    <section id="tools">
-      <div class="container">
-        <h2 class="sectionTitle reveal">Official tools we use (verify yourself)</h2>
-        <p class="lead reveal">
-          These are the same official portals used when listings are claimed and optimized. If you'd rather have this handled for you, request a visibility check below.
-        </p>
-
-        <div class="grid3">
-          <div class="tile reveal">
-            <b>Google Business Profile</b>
-            <span>Create / manage your listing.</span><br/>
-            <a href="https://www.about.google/business/" target="_blank" rel="noopener" style="color:var(--gold2); font-weight:900; display:inline-block; margin-top:10px;">
-              Open Google Business Profile →
-            </a>
-          </div>
-
-          <div class="tile reveal">
-            <b>Apple Business Connect</b>
-            <span>Apple Maps + Siri place card management.</span><br/>
-            <a href="https://businessconnect.apple.com/" target="_blank" rel="noopener" style="color:var(--gold2); font-weight:900; display:inline-block; margin-top:10px;">
-              Open Apple Business Connect →
-            </a>
-          </div>
-
-          <div class="tile reveal">
-            <b>Bing for Business</b>
-            <span>Bing listing + local discovery.</span><br/>
-            <a href="https://www.bing.com/forbusiness" target="_blank" rel="noopener" style="color:var(--gold2); font-weight:900; display:inline-block; margin-top:10px;">
-              Open Bing for Business →
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
+    <!-- CONTACT -->
     <section id="contact">
       <div class="container">
         <div class="card contactCard reveal">
-          <h2 class="sectionTitle" style="margin-top:0;">Request a Free Visibility Check</h2>
+          <h2 class="sectionTitle" style="margin-top:0;">Request a free visibility check</h2>
           <p class="lead">
-            Tell us your business name + city. We’ll respond with a visibility breakdown and the next highest-impact actions.
+            Send your business name + city. You’ll get a quick breakdown and the highest-impact next steps.
           </p>
 
           <form id="contactForm" method="POST" action="https://formspree.io/f/xzdaejrz">
@@ -312,11 +267,11 @@
                 <input id="city" name="city" placeholder="Cape Girardeau, MO" />
               </div>
               <div>
-                <label for="need">Biggest need</label>
+                <label for="need">What do you need help with?</label>
                 <select id="need" name="need">
                   <option value="Google Business Profile">Google Business Profile</option>
                   <option value="Apple Maps / Siri">Apple Maps / Siri</option>
-                  <option value="Bing / Voice Search">Bing / Voice Search</option>
+                  <option value="Bing for Business">Bing for Business</option>
                   <option value="Local SEO / Map Pack">Local SEO / Map Pack</option>
                   <option value="Website / Landing Page">Website / Landing Page</option>
                   <option value="Not sure">Not sure</option>
@@ -326,33 +281,34 @@
 
             <div>
               <label for="message">Message</label>
-              <textarea id="message" name="message" required placeholder="Link your listing (if you have it), and tell us what’s going wrong — ranking, calls, verification, etc."></textarea>
-              <div class="helper">We typically respond within 1 business day.</div>
+              <textarea id="message" name="message" required placeholder="Share your business name, service area, and what’s going wrong (rankings, verification, calls, etc.)."></textarea>
+              <div class="helper">Tip: paste your Google Maps link if you have it.</div>
             </div>
 
+            <!-- Honeypot (spam prevention) -->
             <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
 
             <div class="formActions">
-              <button class="btn primary" type="submit">Send Request</button>
+              <button class="btn primary" type="submit">Send request</button>
               <div id="formStatus" class="status" role="status" aria-live="polite"></div>
             </div>
           </form>
         </div>
 
-        <footer>
-          <div class="container footerGrid" style="padding:0;">
-            <div class="brand">
-              <img src="assets/mrm-logo.png" alt="logo" />
+        <footer class="siteFooter">
+          <div class="footerGrid">
+            <div class="brand footerBrand">
+              <img src="assets/logo.png" alt="Logo" />
               <div>
-                <b style="color:var(--text)">Mississippi River Marketing</b><br/>
+                <b class="footerTitle">Mississippi River Marketing</b><br/>
                 <span>Local SEO • Maps • Voice Search</span>
               </div>
             </div>
+
             <div class="footerLinks">
               <a href="#services">Services</a>
-              <a href="#cape">Cape Girardeau</a>
-              <a href="#resources">Resources</a>
-              <a href="#tools">Official Tools</a>
+              <a href="#why">Why it works</a>
+              <a href="#resources">Official links</a>
               <a href="#contact">Contact</a>
             </div>
           </div>
@@ -360,95 +316,5 @@
       </div>
     </section>
   </main>
-
-  <script>
-    // FORM (AJAX submit keeps user on-page)
-    const form = document.getElementById('contactForm');
-    const statusEl = document.getElementById('formStatus');
-
-    function setStatus(msg, ok=true){
-      statusEl.style.display = 'block';
-      statusEl.textContent = msg;
-      statusEl.style.borderColor = ok ? 'rgba(120, 255, 160, .25)' : 'rgba(255, 120, 120, .25)';
-    }
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      setStatus('Sending…');
-
-      try{
-        const fd = new FormData(form);
-        const res = await fetch(form.action, { method:'POST', body: fd, headers: { 'Accept':'application/json' } });
-
-        if (res.ok){
-          form.reset();
-          setStatus('✅ Sent. We’ll get back to you shortly.');
-        } else {
-          setStatus('❌ Something went wrong. Please try again.', false);
-        }
-      } catch {
-        setStatus('❌ Network error. Please try again.', false);
-      }
-    });
-
-    // SCROLL ANIMATIONS (GSAP)
-    window.addEventListener('load', () => {
-      if (!window.gsap || !window.ScrollTrigger) return;
-      gsap.registerPlugin(ScrollTrigger);
-
-      gsap.utils.toArray(".reveal").forEach((el) => {
-        gsap.fromTo(el,
-          { y: 18, opacity: 0 },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.9,
-            ease: "power3.out",
-            scrollTrigger: { trigger: el, start: "top 85%" }
-          }
-        );
-      });
-
-      gsap.utils.toArray(".count").forEach((el) => {
-        const target = parseInt(el.dataset.to || "0", 10);
-        const obj = { val: 0 };
-
-        ScrollTrigger.create({
-          trigger: el,
-          start: "top 85%",
-          once: true,
-          onEnter: () => {
-            gsap.to(obj, {
-              val: target,
-              duration: 1.1,
-              ease: "power2.out",
-              onUpdate: () => el.textContent = Math.round(obj.val)
-            });
-          }
-        });
-      });
-
-      ["#pinOne","#pinTwo","#pinThree"].forEach((id) => {
-        ScrollTrigger.create({
-          trigger: id,
-          start: "top top",
-          end: "+=85%",
-          pin: true,
-          pinSpacing: true
-        });
-
-        gsap.to(id, {
-          backgroundPosition: "center 60%",
-          ease: "none",
-          scrollTrigger: {
-            trigger: id,
-            start: "top bottom",
-            end: "bottom top",
-            scrub: true
-          }
-        });
-      });
-    });
-  </script>
 </body>
 </html>
