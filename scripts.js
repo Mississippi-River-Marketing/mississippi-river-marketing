@@ -1,7 +1,8 @@
 // scripts.js
 // - Smooth scroll
-// - AJAX Formspree submit (no page redirect)
-// - GSAP reveal + pinned sections (real scroll animations)
+// - AJAX Formspree submit (no redirect)
+// - GSAP reveal animations
+// - Pinned sections + bullets “pop in” while pinned
 
 (function () {
   // Smooth scroll for same-page anchors
@@ -57,7 +58,7 @@
     });
   }
 
-  // GSAP scroll animations
+  // GSAP animations
   window.addEventListener("load", () => {
     if (!window.gsap || !window.ScrollTrigger) return;
 
@@ -67,18 +68,18 @@
     gsap.utils.toArray(".reveal").forEach((el) => {
       gsap.fromTo(
         el,
-        { y: 16, opacity: 0 },
+        { y: 14, opacity: 0 },
         {
           y: 0,
           opacity: 1,
-          duration: 0.85,
+          duration: 0.8,
           ease: "power3.out",
           scrollTrigger: { trigger: el, start: "top 85%" },
         }
       );
     });
 
-    // Pinned story sections
+    // Pinned story sections (shorter hold so it doesn’t feel slow)
     ["#pinOne", "#pinTwo", "#pinThree"].forEach((id) => {
       const el = document.querySelector(id);
       if (!el) return;
@@ -86,7 +87,7 @@
       ScrollTrigger.create({
         trigger: el,
         start: "top top",
-        end: "+=85%",
+        end: "+=55%",
         pin: true,
         pinSpacing: true,
       });
@@ -101,6 +102,25 @@
           end: "bottom top",
           scrub: true,
         },
+      });
+    });
+
+    // Bullet “pop in” while pinned (this is Option 2)
+    gsap.utils.toArray(".pinned").forEach((section) => {
+      const lines = section.querySelectorAll(".pinLine");
+      if (!lines.length) return;
+
+      gsap.to(lines, {
+        opacity: 1,
+        y: 0,
+        stagger: 0.18,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: section,
+          start: "top top",
+          end: "+=55%",
+          scrub: true
+        }
       });
     });
   });
