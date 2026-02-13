@@ -1,813 +1,540 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mississippi River Marketing | Local SEO & Google Business Profile</title>
-  <meta name="description" content="Mississippi River Marketing helps local businesses in Cape Girardeau & Southeast Missouri optimize their Google Business Profile to get more calls, clicks, and customers." />
-  <meta name="theme-color" content="#0b0b0d" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mississippi River Marketing (MRM) | Local SEO & Maps Visibility</title>
+  <meta name="description" content="Mississippi River Marketing helps local businesses get found on Google, Apple Maps, Siri, and Bing through local SEO, listings, and high-converting landing pages." />
+  <meta name="theme-color" content="#0b0b0f" />
 
   <style>
     :root{
-      --bg: #0b0b0d;
-      --panel: rgba(255,255,255,.06);
-      --panel2: rgba(0,0,0,.35);
-      --border: rgba(255,255,255,.12);
-      --text: rgba(255,255,255,.92);
-      --muted: rgba(255,255,255,.74);
-      --muted2: rgba(255,255,255,.62);
-      --gold: #d4af37;
-      --gold2: #ffd76a;
-      --shadow: 0 16px 40px rgba(0,0,0,.45);
+      --bg:#07070b;
+      --panel:#0d0e14;
+      --panel2:#10111a;
+      --text:#f3f4f6;
+      --muted:#b6b8c2;
+      --gold:#d4af37;
+      --gold2:#f2cf63;
+      --border:rgba(255,255,255,.10);
+      --shadow: 0 18px 50px rgba(0,0,0,.55);
       --radius: 18px;
-      --radius2: 14px;
-      --max: 1100px;
+      --max: 1120px;
     }
-
-    *{ box-sizing: border-box; }
-    html{ scroll-behavior: smooth; }
+    *{box-sizing:border-box}
+    html,body{height:100%}
     body{
-      margin: 0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: radial-gradient(1200px 600px at 10% -10%, rgba(212,175,55,.14), transparent 55%),
-                  radial-gradient(900px 600px at 90% 0%, rgba(255,215,110,.10), transparent 50%),
-                  var(--bg);
-      color: var(--text);
-      line-height: 1.55;
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(212,175,55,.18), transparent 55%),
+        radial-gradient(900px 480px at 90% 0%, rgba(242,207,99,.10), transparent 60%),
+        radial-gradient(900px 600px at 50% 110%, rgba(212,175,55,.10), transparent 60%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.45;
     }
-
-    a{ color: inherit; text-decoration: none; }
-    .container{
-      width: min(var(--max), calc(100% - 32px));
-      margin: 0 auto;
-    }
-
-    /* Top nav */
+    a{color:inherit; text-decoration:none}
+    .container{width:100%; max-width:var(--max); margin:0 auto; padding:0 18px}
     .nav{
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: rgba(11,11,13,.72);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255,255,255,.08);
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(12px);
+      background: rgba(7,7,11,.65);
+      border-bottom: 1px solid var(--border);
     }
     .nav-inner{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 12px 0;
-      gap: 12px;
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      gap:12px;
     }
     .brand{
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
+      display:flex; align-items:center; gap:10px;
+      font-weight:800; letter-spacing:.2px;
     }
-    .brand strong{
-      letter-spacing: .4px;
-      font-size: 15px;
-      line-height: 1.1;
+    .logo{
+      width:36px; height:36px; border-radius:12px;
+      background: linear-gradient(145deg, rgba(212,175,55,.95), rgba(242,207,99,.75));
+      box-shadow: 0 10px 30px rgba(212,175,55,.18);
+      display:grid; place-items:center; color:#0b0b0f; font-weight:900;
     }
-    .brand span{
-      font-size: 12px;
-      color: var(--muted2);
-    }
-
     .nav-links{
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      align-items: center;
+      display:flex; gap:18px; align-items:center;
+      color:var(--muted); font-weight:600; font-size:14px;
     }
-    .nav-links a{
-      font-size: 13px;
-      color: var(--muted);
-      padding: 8px 10px;
-      border-radius: 10px;
-      border: 1px solid transparent;
-    }
-    .nav-links a:hover{
-      color: var(--text);
-      border-color: rgba(255,255,255,.10);
-      background: rgba(255,255,255,.05);
-    }
-
-    /* Buttons */
+    .nav-links a:hover{color:var(--text)}
     .btn{
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      border: 0;
-      border-radius: 12px;
-      padding: 12px 14px;
-      cursor: pointer;
-      font-weight: 800;
-      letter-spacing: .2px;
-      background: linear-gradient(135deg, rgba(212,175,55,.95), rgba(255,215,110,.90));
-      color: #121212;
-      box-shadow: 0 12px 26px rgba(212,175,55,.12);
-      transition: transform .08s ease, opacity .15s ease;
-    }
-    .btn:hover{ transform: translateY(-1px); }
-    .btn:active{ transform: translateY(0px); }
-    .btn:disabled{
-      opacity: .6;
-      cursor: not-allowed;
-      transform: none;
-    }
-    .btn.secondary{
-      background: rgba(255,255,255,.08);
+      display:inline-flex; align-items:center; justify-content:center;
+      border-radius: 999px;
+      padding: 11px 16px;
+      font-weight:800;
+      border: 1px solid rgba(212,175,55,.35);
+      background: rgba(212,175,55,.12);
       color: var(--text);
-      border: 1px solid rgba(255,255,255,.12);
-      box-shadow: none;
-      font-weight: 700;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+      white-space:nowrap;
     }
-    .btn.secondary:hover{
-      background: rgba(255,255,255,.10);
+    .btn:hover{transform: translateY(-1px); background: rgba(212,175,55,.18); border-color: rgba(242,207,99,.55)}
+    .btn.primary{
+      background: linear-gradient(145deg, rgba(212,175,55,.95), rgba(242,207,99,.75));
+      color:#0b0b0f;
+      border-color: transparent;
     }
-    .btn-row{
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      align-items: center;
+    .btn.primary:hover{filter:brightness(1.03)}
+    .btn.ghost{
+      background: rgba(255,255,255,.05);
+      border-color: rgba(255,255,255,.12);
+      color: var(--text);
     }
-
-    /* Hero */
+    .btn.ghost:hover{background: rgba(255,255,255,.08)}
     .hero{
-      padding: 56px 0 26px;
+      padding: 56px 0 18px;
     }
     .hero-grid{
-      display: grid;
-      grid-template-columns: 1fr;
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
       gap: 18px;
-      align-items: stretch;
+      align-items:stretch;
     }
-    @media (min-width: 920px){
-      .hero-grid{ grid-template-columns: 1.25fr .75fr; }
-    }
-
     .card{
-      background: var(--panel);
-      border: 1px solid var(--border);
+      border:1px solid var(--border);
+      background: linear-gradient(180deg, rgba(16,17,26,.85), rgba(13,14,20,.85));
       border-radius: var(--radius);
       box-shadow: var(--shadow);
+      overflow:hidden;
     }
-    .hero-main{
-      padding: 22px;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-main:before{
-      content:"";
-      position: absolute;
-      inset: -1px;
-      background: radial-gradient(700px 260px at 25% 0%, rgba(212,175,55,.14), transparent 55%);
-      pointer-events: none;
-    }
-    .hero-main > *{ position: relative; }
-
+    .hero-left{padding: 28px}
     .kicker{
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 12px;
-      color: var(--muted);
-      padding: 7px 10px;
-      border: 1px solid rgba(255,255,255,.12);
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 7px 12px;
       border-radius: 999px;
-      background: rgba(0,0,0,.25);
+      border: 1px solid rgba(212,175,55,.28);
+      background: rgba(212,175,55,.10);
+      color: var(--gold2);
+      font-weight:800;
+      font-size: 12px;
+      letter-spacing: .4px;
+      text-transform: uppercase;
     }
-    .kicker b{
-      color: rgba(255,255,255,.9);
-      font-weight: 800;
-    }
-
     h1{
       margin: 14px 0 10px;
-      font-size: clamp(30px, 4.2vw, 48px);
-      line-height: 1.08;
-      letter-spacing: -.6px;
+      font-size: clamp(30px, 4vw, 46px);
+      line-height:1.08;
+      letter-spacing: -0.5px;
     }
-    .subhead{
-      margin: 0 0 16px;
+    .sub{
       color: var(--muted);
-      font-size: 15px;
-      max-width: 56ch;
+      font-size: 16px;
+      max-width: 62ch;
+      margin: 0 0 18px;
     }
-    .bullets{
-      margin: 14px 0 18px;
-      display: grid;
-      grid-template-columns: 1fr;
+    .hero-actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:16px}
+    .stats{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
       gap: 10px;
-    }
-    @media (min-width: 760px){
-      .bullets{ grid-template-columns: 1fr 1fr; }
-    }
-    .bullet{
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-      padding: 12px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.22);
-    }
-    .dot{
-      width: 10px;
-      height: 10px;
-      border-radius: 999px;
-      margin-top: 6px;
-      background: linear-gradient(135deg, var(--gold), var(--gold2));
-      box-shadow: 0 0 0 4px rgba(212,175,55,.12);
-      flex: 0 0 10px;
-    }
-    .bullet strong{
-      display: block;
-      font-size: 13px;
-      margin-bottom: 2px;
-    }
-    .bullet span{
-      display: block;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.35;
-    }
-
-    .hero-side{
-      padding: 18px;
-      display: grid;
-      gap: 12px;
-    }
-    .side-box{
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.25);
-      padding: 14px;
-    }
-    .side-box h3{
-      margin: 0 0 6px 0;
-      font-size: 14px;
-      letter-spacing: .2px;
-    }
-    .side-box p{
-      margin: 0;
-      color: var(--muted);
-      font-size: 13px;
-    }
-    .side-actions{
-      display: grid;
-      gap: 10px;
-    }
-    .pill{
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 12px;
-      color: var(--muted);
-      padding: 9px 10px;
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.05);
-    }
-
-    /* Sections */
-    section{
-      padding: 26px 0;
-    }
-    .section-head{
-      margin-bottom: 14px;
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-    .section-head h2{
-      margin: 0;
-      font-size: 22px;
-      letter-spacing: -.2px;
-    }
-    .section-head p{
-      margin: 0;
-      color: var(--muted);
-      font-size: 14px;
-      max-width: 68ch;
-    }
-
-    /* Cards grid */
-    .grid-3{
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 12px;
-    }
-    @media (min-width: 860px){
-      .grid-3{ grid-template-columns: repeat(3, 1fr); }
-    }
-    .service{
-      padding: 16px;
-    }
-    .service h3{
-      margin: 0 0 8px;
-      font-size: 15px;
-    }
-    .service ul{
-      margin: 0;
-      padding-left: 18px;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.5;
-    }
-    .service li{ margin: 6px 0; }
-
-    /* Serving area */
-    .area{
-      padding: 16px;
-    }
-    .area-grid{
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-top: 10px;
-    }
-    @media (min-width: 760px){
-      .area-grid{ grid-template-columns: repeat(5, 1fr); }
-    }
-    .city{
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.22);
-      border-radius: 12px;
-      padding: 10px 10px;
-      text-align: center;
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    /* Map */
-    .map{
-      overflow: hidden;
-      border-radius: var(--radius);
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.22);
-    }
-    .map iframe{
-      width: 100%;
-      height: 360px;
-      border: 0;
-      display: block;
-    }
-
-    /* Audit form */
-    .audit-card{
-      padding: 18px;
-    }
-    .audit-grid{
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 12px;
-      margin-top: 12px;
-    }
-    @media (min-width: 860px){
-      .audit-grid{ grid-template-columns: 1fr 1fr; }
-    }
-
-    .field{
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      margin-bottom: 12px;
-    }
-    .field label{
-      font-weight: 700;
-      font-size: 13px;
-      color: rgba(255,255,255,.88);
-    }
-    .field input, .field textarea{
-      width: 100%;
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(0,0,0,.30);
-      color: var(--text);
-      padding: 12px 12px;
-      outline: none;
-    }
-    .field input:focus, .field textarea:focus{
-      border-color: rgba(212,175,55,.65);
-      box-shadow: 0 0 0 4px rgba(212,175,55,.12);
-    }
-    .field small{
-      color: var(--muted2);
-      font-size: 12px;
-      line-height: 1.35;
-    }
-    .consent{
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-      font-size: 13px;
-      color: var(--muted);
-      margin: 8px 0 12px;
-    }
-    .consent input{ margin-top: 3px; }
-    .status{
-      margin: 10px 0 0;
-      min-height: 20px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-    .fineprint{
-      margin: 10px 0 0;
-      font-size: 12px;
-      color: var(--muted2);
-    }
-    .hp-field{
-      position: absolute;
-      left: -9999px;
-      width: 1px;
-      height: 1px;
-      overflow: hidden;
-    }
-
-    /* Footer */
-    footer{
-      padding: 24px 0 36px;
-      color: var(--muted2);
-      font-size: 12px;
-      border-top: 1px solid rgba(255,255,255,.08);
       margin-top: 18px;
     }
-    .footer-row{
+    .stat{
+      padding: 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.04);
+    }
+    .stat b{display:block; font-size:14px}
+    .stat span{display:block; color:var(--muted); font-size:12px; margin-top:3px}
+    .hero-right{
+      padding: 18px;
       display:flex;
-      justify-content: space-between;
-      align-items:center;
+      flex-direction:column;
+      gap: 10px;
+    }
+    .mini{
+      padding: 14px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+    }
+    .mini h3{margin:0 0 8px; font-size:14px}
+    .mini p{margin:0; color:var(--muted); font-size:13px}
+    .section{padding: 28px 0}
+    .section h2{
+      margin:0 0 10px;
+      font-size: 24px;
+      letter-spacing: -0.3px;
+    }
+    .section p.lead{margin:0 0 16px; color:var(--muted); max-width:75ch}
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
       gap: 12px;
-      flex-wrap: wrap;
     }
-    .footer-row a{
-      color: rgba(255,255,255,.78);
-      border-bottom: 1px dashed rgba(255,255,255,.25);
+    .tile{
+      padding: 16px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      min-height: 122px;
     }
-    .footer-row a:hover{
-      color: rgba(255,255,255,.92);
-      border-bottom-color: rgba(255,255,255,.5);
+    .tile b{display:block; margin-bottom:6px}
+    .tile span{color:var(--muted); font-size:13px}
+    .split{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .panel{
+      padding: 18px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+    }
+    .list{
+      margin: 10px 0 0;
+      padding: 0;
+      list-style:none;
+      display:grid;
+      gap: 10px;
+    }
+    .list li{
+      display:flex; gap:10px; align-items:flex-start;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:999px;
+      background: rgba(212,175,55,.9);
+      margin-top: 6px;
+      box-shadow: 0 0 0 4px rgba(212,175,55,.12);
+      flex: 0 0 auto;
+    }
+    .contact-wrap{
+      padding: 22px;
+    }
+    form{display:grid; gap:10px; margin-top: 8px}
+    .row{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+    label{font-size:12px; color:var(--muted); font-weight:700}
+    input, textarea, select{
+      width:100%;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.28);
+      color: var(--text);
+      padding: 12px 12px;
+      outline:none;
+      font-size:14px;
+    }
+    textarea{min-height:120px; resize:vertical}
+    input:focus, textarea:focus, select:focus{
+      border-color: rgba(242,207,99,.55);
+      box-shadow: 0 0 0 4px rgba(212,175,55,.12);
+    }
+    .helper{font-size:12px; color:var(--muted); margin-top:4px}
+    .form-actions{
+      display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-top:6px
+    }
+    .status{
+      font-size: 13px;
+      color: var(--muted);
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      display:none;
+    }
+    .footer{
+      padding: 26px 0 40px;
+      color: var(--muted);
+      border-top: 1px solid rgba(255,255,255,.08);
+      margin-top: 30px;
+      font-size: 13px;
+    }
+    .footer-grid{
+      display:flex; align-items:flex-start; justify-content:space-between; gap: 12px; flex-wrap:wrap;
+    }
+    .footer a{color: var(--muted)}
+    .footer a:hover{color: var(--text)}
+    .mobile-only{display:none}
+
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns: 1fr}
+      .grid{grid-template-columns: 1fr 1fr}
+      .split{grid-template-columns: 1fr}
+    }
+    @media (max-width: 620px){
+      .nav-links{display:none}
+      .mobile-only{display:inline-flex}
+      .hero-left{padding: 22px}
+      .stats{grid-template-columns: 1fr}
+      .grid{grid-template-columns: 1fr}
+      .row{grid-template-columns: 1fr}
     }
   </style>
 </head>
 
 <body>
-  <div class="nav">
+  <header class="nav">
     <div class="container">
       <div class="nav-inner">
-        <div class="brand">
-          <strong>Mississippi River Marketing</strong>
-          <span>Cape Girardeau & Southeast Missouri</span>
-        </div>
-        <div class="nav-links">
+        <a class="brand" href="#top" aria-label="Mississippi River Marketing">
+          <div class="logo">MR</div>
+          <div>Mississippi River Marketing</div>
+        </a>
+
+        <nav class="nav-links" aria-label="Primary">
           <a href="#services">Services</a>
-          <a href="#map">Map</a>
-          <a href="#audit">Free Audit</a>
+          <a href="#process">Process</a>
           <a href="#contact">Contact</a>
-          <a class="btn secondary" href="#request">Request Audit</a>
+        </nav>
+
+        <div style="display:flex; gap:10px; align-items:center;">
+          <a class="btn ghost" href="#contact">Free Visibility Check</a>
+          <a class="btn primary mobile-only" href="#contact">Contact</a>
         </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- HERO -->
-  <header class="hero">
-    <div class="container">
-      <div class="hero-grid">
-        <div class="card hero-main">
-          <div class="kicker"><b>Local SEO</b> + Google Business Profile Optimization</div>
-          <h1>Mississippi River Marketing<br/>for Local Businesses</h1>
-          <p class="subhead">
-            I help local businesses fix and optimize their Google Business Profile so customers can find you,
-            click "Call," and book.
-          </p>
-
-          <div class="bullets">
-            <div class="bullet">
-              <div class="dot"></div>
-              <div>
-                <strong>Google Business Profile Optimization</strong>
-                <span>Categories, services, descriptions, photos, and trust signals.</span>
-              </div>
-            </div>
-            <div class="bullet">
-              <div class="dot"></div>
-              <div>
-                <strong>Local Search Visibility</strong>
-                <span>Quick-win actions to rank better in Maps and local search.</span>
-              </div>
-            </div>
-            <div class="bullet">
-              <div class="dot"></div>
-              <div>
-                <strong>Missed Call & Contact Fixes</strong>
-                <span>Broken call buttons, wrong numbers, missing CTAs - fixed.</span>
-              </div>
-            </div>
-            <div class="bullet">
-              <div class="dot"></div>
-              <div>
-                <strong>Cape Girardeau & SEMO</strong>
-                <span>Built for this region. If you work here, you should rank here.</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="btn-row">
-            <a class="btn" href="#request">Request Free Audit</a>
-            <a class="btn secondary" href="tel:+15736214337">Call: (573) 621-4337</a>
-            <a class="btn secondary" href="mailto:MississippiRiverMarketing@gmail.com">Email Me</a>
-          </div>
-
-          <p style="margin:14px 0 0; color: var(--muted); font-size: 13px;">
-            The goal is simple: show up locally, look legitimate, and make it easy for customers to contact you.
-          </p>
-        </div>
-
-        <aside class="card hero-side">
-          <div class="side-box">
-            <h3>What I Fix Most Often</h3>
-            <p>
-              Business not showing in Maps, wrong phone number, missing services/categories,
-              weak profile content, competitors outranking you nearby.
-            </p>
-          </div>
-
-          <div class="side-box">
-            <h3>Fast Start</h3>
-            <p>
-              You don't need a complicated website to start getting leads.
-              You need a profile Google trusts and customers understand.
-            </p>
-          </div>
-
-          <div class="side-actions">
-            <div class="pill">✅ Quick-win action list</div>
-            <div class="pill">✅ Local competitor comparison</div>
-            <div class="pill">✅ Contact/call-button checks</div>
-            <a class="btn" href="#audit">See Audit Checklist</a>
-          </div>
-        </aside>
       </div>
     </div>
   </header>
 
-  <!-- SERVICES -->
-  <section id="services">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <h2>Services</h2>
-          <p>Practical improvements that help you show up, look credible, and convert searches into calls.</p>
-        </div>
-      </div>
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="card hero-left">
+            <div class="kicker">Local SEO • Maps • Voice Search</div>
+            <h1>Get found on Google, Apple Maps, Siri & Bing — and turn it into customers.</h1>
+            <p class="sub">
+              MRM builds the visibility foundation that local businesses need to show up accurately, rank higher in the map pack,
+              and convert searchers into calls, direction requests, and booked jobs.
+            </p>
 
-      <div class="grid-3">
-        <div class="card service">
-          <h3>GBP Setup & Optimization</h3>
-          <ul>
-            <li>Correct categories & services</li>
-            <li>Description rewrite for search</li>
-            <li>Photos & updates</li>
-            <li>Basic compliance cleanup</li>
-          </ul>
-        </div>
-
-        <div class="card service">
-          <h3>Local Visibility Boost</h3>
-          <ul>
-            <li>Simple ranking improvements</li>
-            <li>Local keyword targeting</li>
-            <li>Competitor comparison</li>
-            <li>Quick-win action list</li>
-          </ul>
-        </div>
-
-        <div class="card service">
-          <h3>Facebook Page Cleanup</h3>
-          <ul>
-            <li>Page info & CTA setup</li>
-            <li>Trust-building post structure</li>
-            <li>Simple lead capture</li>
-            <li>Basic branding polish</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVING AREA -->
-  <section>
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <h2>Serving Cape Girardeau & Surrounding Areas</h2>
-          <p>Local businesses win when local customers can find you fast. This is the market I focus on.</p>
-        </div>
-      </div>
-
-      <div class="card area">
-        <div class="area-grid">
-          <div class="city">Cape Girardeau</div>
-          <div class="city">Jackson</div>
-          <div class="city">Sikeston</div>
-          <div class="city">Scott City</div>
-          <div class="city">Surrounding SEMO</div>
-        </div>
-        <p style="margin: 12px 0 0; color: var(--muted); font-size: 13px;">
-          If you work in the region, you should rank in the region.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- MAP -->
-  <section id="map">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <h2>Map</h2>
-          <p>Serving Cape Girardeau and Southeast Missouri.</p>
-        </div>
-      </div>
-
-      <div class="map">
-        <iframe
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          src="https://www.google.com/maps?q=Cape%20Girardeau%2C%20MO&output=embed">
-        </iframe>
-      </div>
-    </div>
-  </section>
-
-  <!-- FREE AUDIT -->
-  <section id="audit">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <h2>Free Audit (No Obligation)</h2>
-          <p>I'll review your Google Business Profile and tell you exactly what's missing, broken, or holding you back.</p>
-        </div>
-      </div>
-
-      <div class="card area">
-        <div class="area-grid" style="grid-template-columns: 1fr; gap: 10px;">
-          <div class="city" style="text-align:left;">✅ Visibility check (Maps + search)</div>
-          <div class="city" style="text-align:left;">✅ Category & service review</div>
-          <div class="city" style="text-align:left;">✅ Call button / contact review</div>
-          <div class="city" style="text-align:left;">✅ Quick-win action list</div>
-        </div>
-        <p style="margin: 12px 0 0; color: var(--muted); font-size: 13px;">
-          If you want me to do the fixes, we can talk pricing after you see the audit.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- REQUEST AUDIT FORM (WORKING POST FORM) -->
-  <section id="request">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <h2>Request the Audit</h2>
-          <p>Fill this out and I'll follow up with what's broken, what's missing, and what to fix first.</p>
-        </div>
-      </div>
-
-      <div class="card audit-card">
-        <!-- NOTE: This uses a normal form POST to avoid CORS issues -->
-        <form id="mrm-audit-form"
-              action="https://script.google.com/macros/s/AKfycbyOlXNrFIAn0lJ5OpGOlTVL3xzlPXa1kybZSJaTT0j3qzqX72MywasSYbWlk00ZgWvk/exec"
-              method="POST"
-              target="mrm_hidden_iframe"
-              autocomplete="on"
-              novalidate>
-
-          <!-- Honeypot (spam trap). Keep hidden. -->
-          <div class="hp-field" aria-hidden="true">
-            <label>Leave this field blank</label>
-            <input type="text" name="company_website" tabindex="-1" autocomplete="off">
-          </div>
-
-          <!-- Source tag -->
-          <input type="hidden" name="source" value="MRM Website - Free Audit">
-
-          <div class="audit-grid">
-            <div class="field">
-              <label for="name">Name</label>
-              <input id="name" name="name" type="text" placeholder="Your name" required>
+            <div class="hero-actions">
+              <a class="btn primary" href="#contact">Request a Free Visibility Check</a>
+              <a class="btn" href="#services">See What We Do</a>
             </div>
 
-            <div class="field">
-              <label for="business">Business Name</label>
-              <input id="business" name="business" type="text" placeholder="Your business" required>
+            <div class="stats" aria-label="Trust signals">
+              <div class="stat">
+                <b>Maps Visibility</b>
+                <span>Google + Apple Maps indexing & accuracy</span>
+              </div>
+              <div class="stat">
+                <b>Local Authority</b>
+                <span>Citations, directories, consistency</span>
+              </div>
+              <div class="stat">
+                <b>Conversion Focus</b>
+                <span>Calls, leads, bookings — not vanity metrics</span>
+              </div>
             </div>
           </div>
 
-          <div class="audit-grid">
-            <div class="field">
-              <label for="phone">Best Phone Number</label>
-              <input id="phone" name="phone" type="tel" placeholder="(573) 555-1234" inputmode="tel">
+          <aside class="card hero-right" aria-label="Highlights">
+            <div class="mini">
+              <h3>What you get first</h3>
+              <p>A fast audit of your listings, map visibility, NAP consistency, and the biggest “missing pieces” holding you back.</p>
             </div>
-
-            <div class="field">
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" placeholder="you@business.com" required>
+            <div class="mini">
+              <h3>Who we help</h3>
+              <p>Service businesses, contractors, auto services, retail shops, and local brick-and-mortar businesses.</p>
             </div>
-          </div>
-
-          <div class="field">
-            <label for="gbp">Google Business Profile Link (optional)</label>
-            <input id="gbp" name="gbp" type="url" placeholder="https://maps.app.goo.gl/...">
-            <small>If you don't have it, submit anyway - I can still run checks.</small>
-          </div>
-
-          <div class="field">
-            <label for="needs">What do you want fixed?</label>
-            <textarea id="needs" name="needs" rows="5" placeholder="Example: Not showing in Maps, wrong phone button, competitors outrank me..." required></textarea>
-          </div>
-
-          <label class="consent">
-            <input type="checkbox" name="consent" value="yes" checked>
-            OK to email me the audit + occasional tips (unsubscribe anytime).
-          </label>
-
-          <button type="submit" class="btn" id="audit-submit">Send Audit Request</button>
-          <p id="mrm-form-status" class="status" role="status" aria-live="polite"></p>
-
-          <p class="fineprint">After submission, your entries are cleared automatically.</p>
-        </form>
-
-        <!-- Hidden iframe prevents redirect away from your page -->
-        <iframe name="mrm_hidden_iframe" id="mrm_hidden_iframe" style="display:none;"></iframe>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <h2>Contact</h2>
-          <p>Prefer to call or text? Use the options below.</p>
+            <div class="mini">
+              <h3>Based in SEMO</h3>
+              <p>Cape Girardeau area — serving businesses locally and nationwide.</p>
+            </div>
+          </aside>
         </div>
       </div>
+    </section>
 
-      <div class="card area">
-        <div class="btn-row">
-          <a class="btn" href="tel:+15736214337">Call: (573) 621-4337</a>
-          <a class="btn secondary" href="sms:+15736214337">Text Me</a>
-          <a class="btn secondary" href="mailto:MississippiRiverMarketing@gmail.com">MississippiRiverMarketing@gmail.com</a>
+    <section id="services" class="section">
+      <div class="container">
+        <h2>Services</h2>
+        <p class="lead">Tactical execution that improves discoverability across the platforms people actually use to find local businesses.</p>
+
+        <div class="grid">
+          <div class="tile">
+            <b>Google Business Profile</b>
+            <span>Optimization, cleanup, categories, services, photos, posts, and ranking factors.</span>
+          </div>
+          <div class="tile">
+            <b>Apple Maps / Siri</b>
+            <span>Apple Business Connect setup and location accuracy for Apple Maps search.</span>
+          </div>
+          <div class="tile">
+            <b>Bing Places / Voice Search</b>
+            <span>Visibility across Bing results and voice assistants that pull local data.</span>
+          </div>
+          <div class="tile">
+            <b>Citations & Directories</b>
+            <span>NAP consistency, directory authority, duplicates, and listing hygiene.</span>
+          </div>
+          <div class="tile">
+            <b>Landing Pages & Websites</b>
+            <span>Fast, mobile-first pages built to convert clicks into calls and leads.</span>
+          </div>
+          <div class="tile">
+            <b>Reviews & Reputation</b>
+            <span>Ethical review strategy, response templates, and trust-building systems.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="section">
+      <div class="container">
+        <h2>Process</h2>
+        <p class="lead">Simple, repeatable, and measurable. No mystery work.</p>
+
+        <div class="split">
+          <div class="panel">
+            <b>1) Audit & Quick Wins</b>
+            <ul class="list">
+              <li><span class="dot"></span><span>Listings accuracy (NAP, categories, hours, service areas)</span></li>
+              <li><span class="dot"></span><span>Duplicate cleanup + consistency fixes</span></li>
+              <li><span class="dot"></span><span>Conversion improvements (calls, directions, contact flow)</span></li>
+            </ul>
+          </div>
+          <div class="panel">
+            <b>2) Build Authority</b>
+            <ul class="list">
+              <li><span class="dot"></span><span>Citations/directories that matter for local ranking</span></li>
+              <li><span class="dot"></span><span>Content + services structure that matches search intent</span></li>
+              <li><span class="dot"></span><span>Review and reputation systems (ethical + compliant)</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="card contact-wrap">
+          <h2>Contact MRM</h2>
+          <p class="lead">Tell us what you do and what city you serve. We’ll respond with next steps and a visibility check.</p>
+
+          <!--
+            OPTION A (Formspree): Replace action with your Formspree endpoint.
+            OPTION B (Google Apps Script): Replace action with your deployed web app URL.
+          -->
+          <form id="contactForm" method="POST" action="REPLACE_WITH_YOUR_ENDPOINT">
+            <div class="row">
+              <div>
+                <label for="name">Name</label>
+                <input id="name" name="name" autocomplete="name" required placeholder="Your name" />
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" required placeholder="you@email.com" />
+              </div>
+            </div>
+
+            <div class="row">
+              <div>
+                <label for="business">Business Name</label>
+                <input id="business" name="business" autocomplete="organization" placeholder="Business name" />
+              </div>
+              <div>
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" autocomplete="tel" placeholder="(573) 555-1234" />
+              </div>
+            </div>
+
+            <div class="row">
+              <div>
+                <label for="city">City / Service Area</label>
+                <input id="city" name="city" placeholder="Cape Girardeau, MO" />
+              </div>
+              <div>
+                <label for="interest">What do you need most?</label>
+                <select id="interest" name="interest">
+                  <option value="Local SEO / Maps">Local SEO / Maps</option>
+                  <option value="Google Business Profile">Google Business Profile</option>
+                  <option value="Apple Maps / Siri">Apple Maps / Siri</option>
+                  <option value="Bing / Voice Search">Bing / Voice Search</option>
+                  <option value="Website / Landing Page">Website / Landing Page</option>
+                  <option value="Citations / Directories">Citations / Directories</option>
+                  <option value="Not sure">Not sure</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="message">Message</label>
+              <textarea id="message" name="message" required placeholder="What’s going on? Any issues with your listing, ranking, or calls?"></textarea>
+              <div class="helper">We typically respond within 1 business day.</div>
+            </div>
+
+            <!-- Anti-spam honeypot -->
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+
+            <div class="form-actions">
+              <button class="btn primary" type="submit">Send Message</button>
+              <div id="formStatus" class="status" role="status" aria-live="polite"></div>
+            </div>
+          </form>
         </div>
 
-        <p style="margin: 12px 0 0; color: var(--muted); font-size: 13px;">
-          Serving Cape Girardeau and surrounding areas.
-        </p>
-      </div>
-    </div>
-  </section>
+        <div class="footer">
+          <div class="footer-grid container" style="padding:0;">
+            <div>
+              <b style="color:var(--text)">Mississippi River Marketing</b><br/>
+              <span>Local SEO • Maps • Voice Search</span>
+            </div>
+            <div style="display:flex; gap:16px; flex-wrap:wrap;">
+              <a href="#services">Services</a>
+              <a href="#process">Process</a>
+              <a href="#contact">Contact</a>
+            </div>
+          </div>
+        </div>
 
-  <footer>
-    <div class="container">
-      <div class="footer-row">
-        <div>© Mississippi River Marketing. All rights reserved.</div>
-        <div><a href="#request">Request a Free Audit</a></div>
       </div>
-    </div>
-  </footer>
+    </section>
+  </main>
 
   <script>
-    // Prevent duplicate submissions + clear fields after submit.
-    (function () {
-      var form = document.getElementById("mrm-audit-form");
-      var statusEl = document.getElementById("mrm-form-status");
-      var btn = document.getElementById("audit-submit");
+    // Works with Formspree OR Google Apps Script, as long as the endpoint accepts POST.
+    const form = document.getElementById('contactForm');
+    const statusEl = document.getElementById('formStatus');
 
-      if (!form) return;
+    function setStatus(msg, ok=true){
+      statusEl.style.display = 'block';
+      statusEl.textContent = msg;
+      statusEl.style.borderColor = ok ? 'rgba(120, 255, 160, .25)' : 'rgba(255, 120, 120, .25)';
+    }
 
-      form.addEventListener("submit", function () {
-        // Honeypot: if bots fill it, silently ignore (no status update)
-        if (form.company_website && form.company_website.value.trim() !== "") return;
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
 
-        // Prevent duplicate clicks/submits
-        btn.disabled = true;
-        statusEl.textContent = "Sending...";
+      const endpoint = form.getAttribute('action');
+      if (!endpoint || endpoint.includes('REPLACE_WITH_YOUR_ENDPOINT')) {
+        setStatus('Form endpoint not set. Add your Formspree or Google Apps Script URL to the form action.', false);
+        return;
+      }
 
-        // Clear the form so there are no duplicate listings
-        // (We do it shortly after submit so the POST payload is not interrupted.)
-        setTimeout(function () {
-          try { form.reset(); } catch (e) {}
-          statusEl.textContent = "✅ Sent. Check your email shortly.";
-          btn.disabled = false;
-        }, 1200);
-      });
-    })();
+      setStatus('Sending…');
+
+      try {
+        const formData = new FormData(form);
+
+        const res = await fetch(endpoint, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (res.ok) {
+          form.reset();
+          setStatus('✅ Message sent. We’ll get back to you shortly.');
+        } else {
+          // Some endpoints return non-JSON on error; keep it simple.
+          setStatus('❌ Something went wrong. Please try again or contact us directly.', false);
+        }
+      } catch (err) {
+        setStatus('❌ Network error. Please try again.', false);
+      }
+    });
   </script>
 </body>
 </html>
