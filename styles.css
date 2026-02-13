@@ -1,0 +1,412 @@
+/* styles.css — Black/Gold responsive + animated layout
+   Pair with the HTML I sent (move the <style> contents into this file).
+*/
+
+:root{
+  --bg:#07070b;
+  --panel:#0f1018;
+  --panel2:#121321;
+  --text:#f5f6f8;
+  --muted:#b8bac6;
+  --gold:#d4af37;
+  --gold2:#f2cf63;
+  --border:rgba(255,255,255,.10);
+  --shadow:0 20px 70px rgba(0,0,0,.65);
+  --radius:20px;
+  --max:1200px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  color:var(--text);
+  background:
+    radial-gradient(1000px 560px at 12% -12%, rgba(212,175,55,.18), transparent 60%),
+    radial-gradient(900px 520px at 92% 0%, rgba(242,207,99,.10), transparent 60%),
+    radial-gradient(900px 520px at 50% 120%, rgba(212,175,55,.10), transparent 60%),
+    var(--bg);
+  line-height:1.55;
+  overflow-x:hidden;
+}
+
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.container{max-width:var(--max); margin:0 auto; padding:0 18px}
+
+/* NAV */
+header{
+  position:sticky; top:0; z-index:100;
+  backdrop-filter: blur(12px);
+  background: rgba(7,7,11,.75);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav{
+  display:flex; align-items:center; justify-content:space-between; gap:14px;
+  padding:14px 0;
+}
+
+.brand{
+  display:flex; align-items:center; gap:10px;
+  font-weight:950;
+  letter-spacing:.2px;
+}
+
+.brand img{
+  width:34px;
+  height:34px;
+  object-fit:contain;
+}
+
+nav.links{
+  display:flex;
+  gap:16px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+nav.links a{
+  color:var(--muted);
+  font-weight:800;
+  font-size:13px;
+}
+
+nav.links a:hover{color:var(--text)}
+
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  border-radius: 999px;
+  padding: 11px 16px;
+  font-weight:950;
+  border:1px solid rgba(212,175,55,.40);
+  background: rgba(212,175,55,.12);
+  transition: transform .15s ease, background .15s ease, border-color .15s ease;
+  white-space:nowrap;
+}
+
+.btn:hover{
+  transform:translateY(-1px);
+  background: rgba(212,175,55,.16);
+  border-color: rgba(242,207,99,.55);
+}
+
+.btn.primary{
+  background: linear-gradient(145deg, rgba(212,175,55,.95), rgba(242,207,99,.75));
+  color:#0b0b0f;
+  border-color: transparent;
+}
+
+.btn.ghost{
+  background: rgba(255,255,255,.05);
+  border-color: rgba(255,255,255,.14);
+  color: var(--text);
+}
+
+.btn.ghost:hover{background: rgba(255,255,255,.08)}
+.mobileOnly{display:none}
+
+/* HERO */
+.hero{
+  position:relative;
+  padding: 72px 0 40px;
+  background:
+    linear-gradient(rgba(7,7,11,.70), rgba(7,7,11,.92)),
+    url("assets/bridge.jpg") center/cover no-repeat;
+  border-bottom: 1px solid rgba(255,255,255,.10);
+}
+
+.heroGrid{
+  display:grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 16px;
+  align-items: stretch;
+}
+
+.card{
+  border:1px solid var(--border);
+  background: linear-gradient(180deg, rgba(18,19,33,.86), rgba(12,13,20,.86));
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow:hidden;
+}
+
+.heroLeft{padding: 30px}
+
+.kicker{
+  display:inline-flex; align-items:center; gap:8px;
+  padding: 7px 12px;
+  border-radius:999px;
+  border:1px solid rgba(212,175,55,.28);
+  background: rgba(212,175,55,.10);
+  color: var(--gold2);
+  font-weight:950;
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.45px;
+}
+
+h1{
+  margin: 14px 0 10px;
+  font-size: clamp(30px, 4vw, 50px);
+  line-height:1.08;
+  letter-spacing: -0.7px;
+}
+
+.sub{
+  margin:0 0 16px;
+  color:var(--muted);
+  font-size:16px;
+  max-width:70ch;
+}
+
+.heroActions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:14px;
+}
+
+/* STATS */
+.statsRow{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.stat{
+  padding: 12px;
+  border-radius: 16px;
+  border:1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.04);
+}
+
+.stat b{display:block; font-size:14px}
+.stat span{
+  display:block;
+  color:var(--muted);
+  font-size:12px;
+  margin-top:4px;
+}
+
+/* RIGHT SIDE */
+.heroRight{
+  padding: 18px;
+  display:flex;
+  flex-direction:column;
+  gap: 10px;
+}
+
+.mini{
+  padding: 14px;
+  border-radius: 16px;
+  border:1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.04);
+}
+
+.mini h3{margin:0 0 8px; font-size:14px}
+.mini p{margin:0; color:var(--muted); font-size:13px}
+
+/* SECTIONS */
+section{padding: 54px 0}
+
+.sectionTitle{
+  font-size:26px;
+  margin:0 0 10px;
+  letter-spacing:-0.3px;
+}
+
+.lead{
+  margin:0 0 16px;
+  color:var(--muted);
+  max-width:80ch;
+}
+
+.grid3{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 12px;
+}
+
+.tile{
+  padding: 16px;
+  border-radius: 18px;
+  border:1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.04);
+  min-height: 140px;
+}
+
+.tile b{display:block; margin-bottom:6px}
+.tile span{color:var(--muted); font-size:13px}
+
+/* PINNED “STORY” */
+.pinnedWrap{padding: 0}
+
+.pinned{
+  min-height: 100vh;
+  display:flex;
+  align-items:center;
+  position: relative;
+  border-top: 1px solid rgba(255,255,255,.08);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  background:
+    linear-gradient(rgba(7,7,11,.80), rgba(7,7,11,.92)),
+    url("assets/bridge.jpg") center/cover no-repeat;
+}
+
+.pinnedInner{
+  width:100%;
+  padding: 64px 0;
+}
+
+.pinnedCard{
+  max-width: 940px;
+  padding: 22px;
+  border-radius: 18px;
+  border:1px solid rgba(255,255,255,.12);
+  background: rgba(0,0,0,.42);
+  box-shadow: 0 25px 75px rgba(0,0,0,.55);
+}
+
+.pinnedCard .big{
+  font-size: clamp(22px, 3vw, 34px);
+  line-height:1.15;
+  letter-spacing:-0.4px;
+  margin: 0 0 10px;
+}
+
+/* RESOURCES */
+.resources{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:12px;
+  margin-top: 16px;
+}
+
+.resource{
+  border-radius: 18px;
+  border:1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.04);
+  padding: 16px;
+}
+
+.resource b{display:block; margin-bottom:6px}
+
+.resource a{
+  display:inline-flex;
+  margin-top:10px;
+  color: var(--gold2);
+  font-weight:900;
+}
+
+.resource a:hover{filter:brightness(1.05)}
+
+/* CONTACT */
+.contactCard{padding: 22px}
+
+form{
+  display:grid;
+  gap:12px;
+  margin-top: 12px;
+}
+
+.row{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+label{
+  font-size:12px;
+  color:var(--muted);
+  font-weight:950;
+}
+
+input, textarea, select{
+  width:100%;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(0,0,0,.28);
+  color: var(--text);
+  padding: 12px 12px;
+  outline:none;
+  font-size:14px;
+}
+
+textarea{
+  min-height:120px;
+  resize:vertical;
+}
+
+input:focus, textarea:focus, select:focus{
+  border-color: rgba(242,207,99,.55);
+  box-shadow: 0 0 0 4px rgba(212,175,55,.12);
+}
+
+.helper{
+  font-size:12px;
+  color:var(--muted);
+  margin-top:4px;
+}
+
+.formActions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  align-items:center;
+  margin-top:6px;
+}
+
+.status{
+  font-size: 13px;
+  color: var(--muted);
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.03);
+  display:none;
+}
+
+/* FOOTER */
+footer{
+  padding: 30px 0 46px;
+  color: var(--muted);
+  border-top: 1px solid rgba(255,255,255,.08);
+  margin-top: 24px;
+  font-size: 13px;
+}
+
+.footerGrid{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap: 12px;
+  flex-wrap:wrap;
+}
+
+.footerLinks{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+}
+
+.footerLinks a:hover{color: var(--text)}
+
+/* RESPONSIVE */
+@media (max-width: 980px){
+  .heroGrid{grid-template-columns:1fr}
+  .grid3{grid-template-columns:1fr 1fr}
+  .resources{grid-template-columns:1fr}
+  .statsRow{grid-template-columns:1fr}
+  nav.links{display:none}
+  .mobileOnly{display:inline-flex}
+}
+
+@media (max-width: 620px){
+  .grid3{grid-template-columns:1fr}
+  .row{grid-template-columns:1fr}
+  .heroLeft{padding:22px}
+}
