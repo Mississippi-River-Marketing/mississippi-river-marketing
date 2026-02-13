@@ -29,7 +29,6 @@ body{
 
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
-
 .container{max-width:var(--max);margin:0 auto;padding:0 18px}
 
 /* Header / Nav */
@@ -70,7 +69,6 @@ img{display:block;max-width:100%}
   font-weight:850;
   font-size:13px;
 }
-
 .links a:hover{color:var(--text)}
 .navCta{color:var(--gold2) !important}
 
@@ -87,25 +85,21 @@ img{display:block;max-width:100%}
   transition: transform .15s ease, background .15s ease, border-color .15s ease, filter .15s ease;
   white-space:nowrap;
 }
-
 .btn:hover{
   transform:translateY(-1px);
   background: rgba(212,175,55,.16);
   border-color: rgba(242,207,99,.55);
   filter: brightness(1.03);
 }
-
 .btn.primary{
   background: linear-gradient(145deg, rgba(212,175,55,.95), rgba(242,207,99,.75));
   color:#0b0b0f;
   border-color: transparent;
 }
-
 .btn.ghost{
   background: rgba(255,255,255,.06);
   border-color: rgba(255,255,255,.14);
 }
-
 .btn.ghost:hover{background: rgba(255,255,255,.09)}
 .mobileCta{display:none}
 
@@ -114,11 +108,10 @@ img{display:block;max-width:100%}
   position:relative;
   padding: 76px 0 44px;
   background:
-    linear-gradient(rgba(7,7,11,.68), rgba(7,7,11,.92)),
+    linear-gradient(rgba(7,7,11,.55), rgba(7,7,11,.90)),
     url("assets/bridge.jpg") center/cover no-repeat;
   border-bottom: 1px solid rgba(255,255,255,.10);
 }
-
 .heroFade{
   position:absolute;left:0;right:0;bottom:0;height:70px;
   background: linear-gradient(transparent, rgba(7,7,11,1));
@@ -166,7 +159,7 @@ h1{
   margin:0 0 16px;
   color:var(--muted);
   font-size:16px;
-  max-width:70ch;
+  max-width:72ch;
 }
 
 .heroActions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
@@ -240,25 +233,28 @@ section{padding: 54px 0}
 /* Pinned story */
 .pinnedWrap{padding:0}
 
+/* Shorter than 100vh so it doesn’t feel like empty space */
 .pinned{
-  min-height:100vh;
+  min-height: 78vh;
   display:flex;
-  align-items:center;
+  align-items:flex-start;
+  padding: 90px 0 70px;
   border-top:1px solid rgba(255,255,255,.08);
   border-bottom:1px solid rgba(255,255,255,.08);
   background:
-    linear-gradient(rgba(7,7,11,.80), rgba(7,7,11,.92)),
+    linear-gradient(rgba(7,7,11,.62), rgba(7,7,11,.92)),
     url("assets/bridge.jpg") center/cover no-repeat;
 }
 
-.pinnedInner{width:100%;padding:64px 0}
+.pinnedInner{width:100%;padding:0}
 
 .pinnedCard{
-  max-width: 940px;
-  padding: 22px;
+  max-width: 980px;
+  width: 100%;
+  padding: 26px;
   border-radius: 18px;
-  border:1px solid rgba(255,255,255,.12);
-  background: rgba(0,0,0,.42);
+  border:1px solid rgba(255,255,255,.14);
+  background: rgba(0,0,0,.46);
   box-shadow: 0 25px 75px rgba(0,0,0,.55);
 }
 
@@ -267,6 +263,23 @@ section{padding: 54px 0}
   line-height:1.15;
   letter-spacing:-0.4px;
   margin: 0 0 10px;
+}
+
+.pinnedLead{margin:0}
+
+/* Pop-in bullets */
+.pinBullets{
+  margin-top:16px;
+  display:grid;
+  gap:10px;
+}
+
+.pinLine{
+  color: var(--muted);
+  border-left: 3px solid rgba(212,175,55,.60);
+  padding-left: 12px;
+  opacity: 0;
+  transform: translateY(10px);
 }
 
 /* Resources */
@@ -306,9 +319,7 @@ section{padding: 54px 0}
 .contactCard{padding:22px}
 
 form{display:grid;gap:12px;margin-top:12px}
-
 .row{display:grid;grid-template-columns: 1fr 1fr;gap:12px}
-
 label{font-size:12px;color:var(--muted);font-weight:950}
 
 input,textarea,select{
@@ -330,7 +341,6 @@ input:focus,textarea:focus,select:focus{
 }
 
 .helper{font-size:12px;color:var(--muted);margin-top:4px}
-
 .formActions{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:6px}
 
 .status{
@@ -373,10 +383,13 @@ input:focus,textarea:focus,select:focus{
   .statsRow{grid-template-columns:1fr}
   .links{display:none}
   .mobileCta{display:inline-flex}
+  .pinned{min-height: 82vh; padding: 80px 0 60px;}
 }
 
 @media (max-width: 620px){
   .grid3{grid-template-columns:1fr}
   .row{grid-template-columns:1fr}
   .heroLeft{padding:22px}
+  .pinned{padding: 70px 0 55px;}
+  .pinnedCard{padding: 20px;}
 }
